@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 
 const links = [
   { label: "Como funciona", href: "#formula" },
@@ -27,10 +28,15 @@ export function SiteNav() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-mono text-sm font-bold">
-            AS
-          </span>
+        <a href="#top" className="flex items-center gap-3">
+          {/* Logo Oficial Atualizada */}
+          <Image 
+            src="/logo.png" 
+            alt="Amazon Shoes Lavanderia de Tênis" 
+            width={38} 
+            height={38} 
+            className="object-contain"
+          />
           <span className="text-sm font-semibold tracking-tight">
             Amazon<span className="text-primary">Shoes</span>
           </span>
