@@ -3,8 +3,7 @@
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 
-const WHATSAPP =
-  "https://wa.me/5592999999999?text=Ol%C3%A1!%20Quero%20agendar%20uma%20coleta%20Amazon%20Shoes"
+const WHATSAPP = "https://wa.me/559293514747?text=Ol%C3%A1!%20Quero%20agendar%20uma%20coleta%20Amazon%20Shoes"
 
 const plans = [
   {

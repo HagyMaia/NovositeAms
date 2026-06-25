@@ -3,7 +3,8 @@
 import Image from "next/image"
 import { Phone, MapPin, Mail } from "lucide-react"
 
-const WHATSAPP_LINK = "https://wa.me/559293514747?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20a%20lavagem%20dos%20meus%20t%C3%AAnis."
+const WHATSAPP_LINK = "https://wa.me/5592993514747?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20coleta.";
+const MAPS_LINK = "https://maps.app.goo.gl/QCcnUrbxRMSV2CaG7";
 
 export function ContactVisit() {
   return (
@@ -19,6 +20,7 @@ export function ContactVisit() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-3">
+          {/* Card: WhatsApp */}
           <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40 text-center flex flex-col items-center">
             <span className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors mb-4">
               <Phone className="size-5" />
@@ -28,15 +30,17 @@ export function ContactVisit() {
             <span className="text-primary font-bold mt-4 text-sm">(92) 9351-4747</span>
           </a>
 
-          <div className="rounded-2xl border border-border bg-card p-6 text-center flex flex-col items-center">
-            <span className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-4">
+          {/* Card Atualizado: Nossa Sede (Link Maps Interativo) */}
+          <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40 text-center flex flex-col items-center">
+            <span className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors mb-4">
               <MapPin className="size-5" />
             </span>
             <h3 className="font-semibold text-lg">Nossa Sede</h3>
             <p className="text-xs text-muted-foreground mt-1 px-2">Av. Umberto Calderaro, 300, LOJA 10 - Adrianópolis, Manaus - AM.</p>
-            <span className="text-muted-foreground/60 text-[10px] uppercase font-bold tracking-wider mt-4">(CONFIRA A LOCALIZAÇÃO PRESENCIAL ABAIXO)</span>
-          </div>
+            <span className="text-primary font-bold mt-4 text-sm group-hover:underline">Ver no Google Maps ➔</span>
+          </a>
 
+          {/* Card: Instagram */}
           <a href="https://instagram.com/amazonshoes.lavanderia" target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40 text-center flex flex-col items-center">
             <span className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors mb-4">
               <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -46,7 +50,7 @@ export function ContactVisit() {
               </svg>
             </span>
             <h3 className="font-semibold text-lg">Instagram</h3>
-            <p className="text-xs text-muted-foreground mt-1 px-4">Acompanhe bastidores diários e resultados reais.</p>
+            <p className="text-xs text-muted-foreground mt-1 px-4">Acompanhe bastidores diários e results reais.</p>
             <span className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium mt-4 group-hover:bg-primary/20 transition-colors">@amazonshoes.lavanderia</span>
           </a>
         </div>
@@ -60,10 +64,11 @@ export function ContactVisit() {
             <p className="mt-2 text-sm text-muted-foreground">Conheça nossa localização física premium e confira nossa grade oficial de horários.</p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 items-center">
+          <div className="grid gap-8 md:grid-cols-2 items-stretch max-w-5xl mx-auto">
+            
             {/* Bloco 1: Imagem da Fachada */}
-            <div className="rounded-2xl border border-border bg-card overflow-hidden p-4 flex flex-col justify-between">
-              <div className="mb-4">
+            <div className="rounded-2xl border border-border bg-card p-5 flex flex-col justify-between">
+              <div className="mb-6">
                 <span className="inline-block bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md mb-2">
                   SEDE ADRIANÓPOLIS
                 </span>
@@ -72,19 +77,20 @@ export function ContactVisit() {
                   Localizada em centro comercial de fácil acesso, ao lado de grandes parceiros locais.
                 </p>
               </div>
-              <div className="relative w-full aspect-[3/4] md:aspect-video rounded-xl overflow-hidden border border-border">
+              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-border">
                 <Image 
-                  src="/fachada.jpg"
+                  src="/fachada.jpeg"
                   alt="Fachada da Sede Amazon Shoes" 
                   fill 
-                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
 
             {/* Bloco 2: Imagem do Panfleto de Horários */}
-            <div className="rounded-2xl border border-border bg-card overflow-hidden p-4 flex flex-col items-center">
-              <div className="w-full text-left mb-4">
+            <div className="rounded-2xl border border-border bg-card p-5 flex flex-col justify-between">
+              <div className="mb-6">
                 <span className="inline-block bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md mb-2">
                   DISPONIBILIDADE
                 </span>
@@ -93,15 +99,17 @@ export function ContactVisit() {
                   Estamos de portas abertas para receber você e seus pares nos seguintes períodos.
                 </p>
               </div>
-              <div className="relative w-full aspect-[9/16] max-h-[480px] rounded-xl overflow-hidden border border-border bg-background">
+              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-border bg-background">
                 <Image 
-                  src="/horarios.jpg" 
+                  src="/horarios.jpeg" 
                   alt="Horários de Funcionamento Amazon Shoes" 
                   fill 
-                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
+
           </div>
         </div>
       </div>

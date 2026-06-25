@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 
+const CLIENT_LOG_LINK = "https://site.nuvemgestor.com.br/CV1AT7S9LTLKGSQ6U264CNO34BQEX9V0DJCXU/login.asp";
+
 const links = [
   { label: "Como funciona", href: "#formula" },
   { label: "Planos", href: "#planos" },
@@ -42,6 +44,7 @@ export function SiteNav() {
           </span>
         </a>
 
+        {/* Links Centrais (Desktop) */}
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <a
@@ -54,12 +57,33 @@ export function SiteNav() {
           ))}
         </div>
 
-        <a
-          href="#delivery"
-          className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
-        >
-          Agendar coleta
-        </a>
+        {/* Lado Direito: Gestor + Área do Cliente + CTA */}
+        <div className="flex items-center gap-5">
+          {/* NOVO BOTÃO: GESTOR (Redireciona para /admin) */}
+          <a 
+            href="/admin"
+            className="hidden text-xs font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary sm:inline-block border border-border bg-card/40 px-3.5 py-1.5 rounded-xl hover:bg-card"
+          >
+            Gestor
+          </a>
+
+          <a 
+            href={CLIENT_LOG_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:inline-block"
+          >
+            Área do Cliente
+          </a>
+          
+          <a
+            href="#delivery"
+            className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
+          >
+            Agendar coleta
+          </a>
+        </div>
+
       </nav>
     </header>
   )

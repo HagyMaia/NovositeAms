@@ -4,8 +4,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { MessageCircle, Truck, Clock, MapPin } from "lucide-react"
 
-const WHATSAPP =
-  "https://wa.me/5592999999999?text=Ol%C3%A1!%20Quero%20agendar%20uma%20coleta%20delivery%20Amazon%20Shoes"
+const WHATSAPP_LINK = "https://wa.me/5592993514747?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20delivery.";
 
 const perks = [
   { icon: Truck, label: "Coleta grátis", sub: "Buscamos na sua porta" },
@@ -43,7 +42,7 @@ export function CtaDelivery() {
               </p>
 
               <a
-                href={WHATSAPP}
+                href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
