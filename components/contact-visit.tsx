@@ -7,10 +7,10 @@ import { SITE_CONFIG } from "@/lib/constants"
 
 export function ContactVisit() {
   return (
-    <section id="contato" className="relative bg-background pt-16 pb-20">
+    <section id="contato" className="relative bg-background pt-16 pb-20 overflow-hidden w-full">
       
       {/* FALE CONOSCO */}
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8 mb-20">
         <div className="mx-auto max-w-2xl text-center mb-12">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Canais de Atendimento

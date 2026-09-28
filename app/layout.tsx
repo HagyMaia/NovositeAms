@@ -147,7 +147,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`dark ${geistSans.variable} ${geistMono.variable} bg-background`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} bg-background overflow-x-hidden w-full max-w-[100vw]`}
       suppressHydrationWarning
     >
       <head>
@@ -172,7 +172,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased selection:bg-primary selection:text-primary-foreground">
+      <body className="font-sans antialiased selection:bg-primary selection:text-primary-foreground overflow-x-hidden w-full max-w-[100vw]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

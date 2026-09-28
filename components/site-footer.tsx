@@ -7,8 +7,8 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border bg-card/60 backdrop-blur-md">
-      <div className="mx-auto max-w-7xl px-5 pt-16 pb-12 sm:px-8">
+    <footer className="border-t border-border bg-card/60 backdrop-blur-md w-full overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 pt-16 pb-12 sm:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5 pb-12 border-b border-border/60">
           
           {/* Column 1: Brand & Bio */}

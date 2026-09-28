@@ -15,11 +15,11 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+    <div className="relative min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden w-full max-w-[100vw]">
       {/* Menu Superior Responsivo */}
       <SiteNav />
       
-      <main>
+      <main className="w-full overflow-x-hidden">
         {/* Banner Principal */}
         <Hero />
         

@@ -13,8 +13,8 @@ const perks = [
 
 export function CtaDelivery() {
   return (
-    <section id="delivery" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="delivery" className="relative py-20 sm:py-28 overflow-hidden w-full">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

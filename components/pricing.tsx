@@ -50,14 +50,14 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="planos" className="relative py-20 sm:py-28">
+    <section id="planos" className="relative py-20 sm:py-28 overflow-hidden w-full">
       {/* Background glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/3 h-96 w-[700px] -translate-x-1/2 rounded-full bg-primary/10 blur-[150px]"
+        className="pointer-events-none absolute left-1/2 top-1/3 h-96 w-[90vw] max-w-[600px] -translate-x-1/2 rounded-full bg-primary/10 blur-[150px]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Planos de Lavagem

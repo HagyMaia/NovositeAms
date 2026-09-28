@@ -42,8 +42,8 @@ const realGoogleReviews = [
 
 export function Testimonials() {
   return (
-    <section className="relative py-20 sm:py-28 overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section className="relative py-20 sm:py-28 overflow-hidden w-full bg-background">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
         
         {/* Header com Selo Oficial Google Reviews */}
         <div className="mx-auto max-w-2xl text-center">

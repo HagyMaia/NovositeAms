@@ -40,8 +40,8 @@ export function Faq() {
   }
 
   return (
-    <section id="faq" className="relative py-20 sm:py-28 overflow-hidden bg-background">
-      <div className="mx-auto max-w-4xl px-5 sm:px-8">
+    <section id="faq" className="relative py-20 sm:py-28 overflow-hidden w-full bg-background">
+      <div className="mx-auto max-w-4xl px-4 sm:px-8">
         <div className="text-center">
           <div className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/60 px-3.5 py-1 text-xs font-semibold text-muted-foreground">
             <HelpCircle className="size-3.5 text-primary" />

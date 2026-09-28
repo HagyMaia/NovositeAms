@@ -48,8 +48,8 @@ export function OrderCalculator() {
   const directUrl = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${whatsappMessage}`
 
   return (
-    <section id="calculadora" className="relative py-20 sm:py-28 overflow-hidden bg-card/40 border-y border-border">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="calculadora" className="relative py-20 sm:py-28 overflow-hidden w-full bg-card/40 border-y border-border">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
             <Calculator className="size-3.5" />

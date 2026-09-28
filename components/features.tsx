@@ -26,8 +26,8 @@ const features = [
 
 export function Features() {
   return (
-    <section id="formula" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="formula" className="relative py-20 sm:py-28 overflow-hidden w-full">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             A fórmula Amazon Shoes
