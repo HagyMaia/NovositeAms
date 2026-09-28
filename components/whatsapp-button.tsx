@@ -10,9 +10,9 @@ export function WhatsAppButton() {
   const [hasClosedTooltip, setHasClosedTooltip] = useState(false)
 
   useEffect(() => {
-    // Show tooltip after 3 seconds
+    // Show tooltip after 3 seconds on desktop only
     const timer = setTimeout(() => {
-      if (!hasClosedTooltip) {
+      if (!hasClosedTooltip && window.innerWidth >= 640) {
         setShowTooltip(true)
       }
     }, 3000)
@@ -21,15 +21,15 @@ export function WhatsAppButton() {
   }, [hasClosedTooltip])
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
-      {/* Tooltip Card */}
+    <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2">
+      {/* Tooltip Card (Desktop Only) */}
       <AnimatePresence>
         {showTooltip && (
           <motion.div
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="relative flex items-center gap-3 rounded-2xl border border-border bg-card/95 p-3.5 pr-8 shadow-2xl backdrop-blur-md max-w-xs text-xs text-foreground"
+            className="hidden sm:flex relative items-center gap-3 rounded-2xl border border-border bg-card/95 p-3.5 pr-8 shadow-2xl backdrop-blur-md max-w-xs text-xs text-foreground"
           >
             <button
               onClick={() => {
@@ -62,17 +62,17 @@ export function WhatsAppButton() {
         aria-label="Falar pelo WhatsApp"
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="group relative flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/25 transition-all hover:shadow-2xl hover:shadow-[#25D366]/40 focus:outline-none focus:ring-4 focus:ring-[#25D366]/30"
+        className="group relative flex size-12 sm:size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/30 transition-all hover:shadow-2xl hover:shadow-[#25D366]/50 focus:outline-none focus:ring-4 focus:ring-[#25D366]/30"
       >
         {/* Radar Pulse Animation */}
         <span className="absolute -inset-1 rounded-full bg-[#25D366]/40 opacity-75 blur-sm animate-ping pointer-events-none" />
 
         {/* WhatsApp Icon */}
-        <MessageCircle className="relative size-7 fill-white stroke-none" />
+        <MessageCircle className="relative size-6 sm:size-7 fill-white stroke-none" />
 
         {/* Online Status Indicator */}
-        <span className="absolute top-1 right-1 flex size-3.5 items-center justify-center">
-          <span className="size-3 rounded-full bg-emerald-300 ring-2 ring-background" />
+        <span className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 flex size-3 sm:size-3.5 items-center justify-center">
+          <span className="size-2.5 sm:size-3 rounded-full bg-emerald-300 ring-2 ring-background" />
         </span>
       </motion.a>
     </div>

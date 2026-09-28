@@ -2,87 +2,91 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Star, Truck, Zap, ArrowRight, ShieldCheck } from "lucide-react"
+import { Star, Truck, ArrowRight, ShieldCheck } from "lucide-react"
 import { SITE_CONFIG } from "@/lib/constants"
 
 export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24"
+      className="relative overflow-hidden pt-24 pb-14 sm:pt-36 sm:pb-24"
     >
       {/* Glow Accents */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-24 h-[420px] w-[620px] -translate-x-1/2 rounded-full bg-primary/20 blur-[140px]"
+        className="pointer-events-none absolute left-1/2 top-20 h-[320px] sm:h-[420px] w-[90%] sm:w-[620px] -translate-x-1/2 rounded-full bg-primary/20 blur-[100px] sm:blur-[140px]"
       />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,oklch(0.88_0.24_130_/_0.15),transparent_65%)]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 text-center sm:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-8 text-center">
+        
+        {/* Badge Superior */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-card/80 px-4 py-1.5 text-xs font-semibold text-muted-foreground backdrop-blur-md shadow-sm"
+          className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-card/90 px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold text-muted-foreground backdrop-blur-md shadow-sm"
         >
-          <span className="size-2 rounded-full bg-primary animate-pulse" />
-          <span>Lavagem & Restauração Premium de Tênis · Manaus - AM</span>
+          <span className="size-2 rounded-full bg-primary animate-pulse shrink-0" />
+          <span>Lavagem & Restauração Premium · Manaus</span>
         </motion.div>
 
+        {/* Título Principal */}
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="mx-auto mt-6 max-w-4xl text-balance text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl"
+          className="mx-auto mt-5 sm:mt-6 max-w-4xl text-balance text-4xl sm:text-7xl lg:text-8xl font-black leading-[1.02] tracking-tight"
         >
           Seus tênis{" "}
-          <span className="text-primary">novos de novo</span>
+          <span className="text-primary block sm:inline">novos de novo</span>
         </motion.h1>
 
+        {/* Subtítulo */}
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.12 }}
-          className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg"
+          className="mx-auto mt-4 sm:mt-6 max-w-2xl text-pretty text-sm sm:text-lg leading-relaxed text-muted-foreground px-2"
         >
           Cuidado artesanal especializado, sanitização por ozônio e hidroblindagem para
           devolver a vida e o brilho dos seus pares favoritos. Buscamos e entregamos na
           sua porta em toda a cidade.
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* Botões de Ação */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.18 }}
-          className="mt-9 flex flex-col items-center justify-center gap-3.5 sm:flex-row"
+          className="mt-7 sm:mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row px-2"
         >
           <a
             href={SITE_CONFIG.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-center text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:scale-105"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 sm:px-8 sm:py-4 text-center text-xs sm:text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:scale-105"
           >
             <span>Agendar Coleta no WhatsApp</span>
             <ArrowRight className="size-4" />
           </a>
           <a
             href="#planos"
-            className="w-full sm:w-auto rounded-full border border-border bg-card/80 px-8 py-4 text-center text-sm font-semibold text-foreground backdrop-blur transition-all hover:bg-card hover:border-primary/40"
+            className="w-full sm:w-auto rounded-full border border-border bg-card/80 px-7 py-3.5 sm:px-8 sm:py-4 text-center text-xs sm:text-sm font-semibold text-foreground backdrop-blur transition-all hover:bg-card hover:border-primary/40"
           >
             Conhecer os Planos
           </a>
         </motion.div>
 
-        {/* Quick Highlights / Trust Bar */}
+        {/* Barra de Prova Social */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.22 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-muted-foreground"
+          className="mt-7 sm:mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs font-medium text-muted-foreground"
         >
           <div className="flex items-center gap-1.5">
             <div className="flex text-amber-400">
@@ -91,7 +95,7 @@ export function Hero() {
               ))}
             </div>
             <span className="text-foreground font-semibold">5.0</span>
-            <span>Avaliações em Manaus</span>
+            <span>no Google</span>
           </div>
 
           <div className="flex items-center gap-1.5">
@@ -105,16 +109,17 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Hero Sneaker Image */}
+        {/* Imagem do Tênis com Gradiente Suave */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="relative mx-auto mt-12 max-w-3xl"
+          className="relative mx-auto mt-8 sm:mt-12 max-w-3xl"
         >
           <motion.div
-            animate={{ y: [0, -14, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+            className="relative"
           >
             <Image
               src="/sneaker-hero.png"
@@ -122,10 +127,11 @@ export function Hero() {
               width={900}
               height={620}
               priority
-              className="mx-auto h-auto w-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+              className="mx-auto h-auto w-full object-contain rounded-2xl drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
             />
           </motion.div>
         </motion.div>
+
       </div>
     </section>
   )

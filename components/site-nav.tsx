@@ -101,11 +101,11 @@ export function SiteNav() {
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+        <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-4 sm:px-8">
           
           {/* Logo Oficial */}
-          <a href="#top" className="flex items-center gap-3.5 group">
-            <div className="relative size-11 transition-transform group-hover:scale-105">
+          <a href="#top" className="flex items-center gap-2.5 sm:gap-3.5 group">
+            <div className="relative size-8 sm:size-11 transition-transform group-hover:scale-105 shrink-0">
               <Image 
                 src="/logo.png" 
                 alt="Amazon Shoes Lavanderia de Tênis" 
@@ -115,40 +115,40 @@ export function SiteNav() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-extrabold tracking-tight text-foreground">
+              <span className="text-base sm:text-lg font-extrabold tracking-tight text-foreground leading-tight">
                 Amazon<span className="text-primary">Shoes</span>
               </span>
-              <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-muted-foreground font-bold">
                 Lavanderia de Tênis · Manaus
               </span>
             </div>
           </a>
 
-          {/* Ações da Barra Superior (Limpo e sem poluição) */}
-          <div className="flex items-center gap-3">
-
+          {/* Ações da Barra Superior (Responsivo e Ultra Limpo) */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            
             {/* Alternador de Tema Claro / Escuro */}
             <ThemeToggle />
 
-            {/* CTA Principal de Agendamento */}
+            {/* CTA Principal de Agendamento (Visível em Tablet/Desktop) */}
             <a
               href={SITE_CONFIG.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 sm:px-6 sm:py-3 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-md shadow-primary/20 transition-all hover:shadow-lg hover:shadow-primary/30 hover:scale-105"
+              className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-md shadow-primary/20 transition-all hover:shadow-lg hover:shadow-primary/30 hover:scale-105 whitespace-nowrap"
             >
               <span>Agendar Coleta</span>
               <ArrowRight className="size-3.5" />
             </a>
 
-            {/* Botão Principal do Menu Lateral (Drawer) */}
+            {/* Botão do Menu Lateral (Drawer) */}
             <button
               onClick={() => setDrawerOpen(true)}
-              className="group flex items-center gap-2 rounded-full border border-border bg-card/80 px-3.5 py-2 sm:px-4 sm:py-2.5 text-xs font-bold uppercase tracking-wider text-foreground shadow-sm backdrop-blur transition-all hover:bg-card hover:border-primary/50 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/40"
+              className="group flex items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 sm:px-4 sm:py-2.5 text-xs font-bold uppercase tracking-wider text-foreground shadow-sm backdrop-blur transition-all hover:bg-card hover:border-primary/50 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/40"
               aria-label="Abrir menu de navegação"
             >
               <Menu className="size-4 text-primary transition-transform group-hover:scale-110" />
-              <span className="hidden sm:inline">Menu</span>
+              <span className="text-[11px] sm:text-xs">Menu</span>
             </button>
 
           </div>
